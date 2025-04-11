@@ -1,0 +1,131 @@
+/* ====================================================== Shop Section ================================================ */
+.shop-header {
+    position: relative;
+    z-index: 1;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.85), rgba(0, 0, 0, 0.4) 30%, rgba(0, 0, 0, 0) 60%),
+                url('../images/hero-banner.jpeg') no-repeat center center/cover;
+    text-align: center;
+    padding: 6em 2em 4em;
+  }
+  
+  .shop-header::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.2);
+    z-index: 0;
+    pointer-events: none;
+  }
+  
+
+  .shop-header p {
+    color: var(--text-muted);
+    font-size: 1.1em;
+    max-width: 700px;
+    margin: 0 auto;
+  }
+  
+  .shop-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2em;
+    justify-content: center;
+    padding: 2em;
+  }
+  
+  .shop-card {
+    background: var(--card-bg);
+    border-radius: 10px;
+    width: 300px;
+    padding: 2em;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 0 0 transparent;
+    transform: translateY(30px);
+    animation: fadeInUp 0.8s ease-out forwards;
+  }
+
+  .shop-card:nth-child(1) {
+    background: linear-gradient(to bottom, rgba(205, 127, 50, 0.7), rgba(0, 0, 0, 0.8));
+  }
+
+  .shop-card:nth-child(2) {
+    background: linear-gradient(to bottom, rgba(192, 192, 192, 0.6), rgba(0, 0, 0, 0.8));
+  }
+  
+  .shop-card:nth-child(3) {
+    background: linear-gradient(to bottom, rgba(255, 215, 0, 0.6), rgba(0, 0, 0, 0.8));
+  }
+
+
+  @keyframes fadeInUp {
+    0% {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  .shop-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px var(--hover-glow);
+  }
+  
+  .shop-card img {
+    width: 100%;
+    height: 320px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 1em;
+    animation-delay: 0.2s;
+  }
+  
+  .shop-card h2 {
+    font-size: 1.6em;
+    margin-bottom: 0.5em;
+  }
+  
+  .shop-card .price {
+    font-weight: bold;
+    margin-bottom: 1em;
+    color: var(--accent2);
+  }
+  
+  .shop-card ul {
+    list-style: none;
+    padding: 0;
+    margin: 1em 0 1.5em;
+    color: var(--text-muted);
+    font-size: 0.95em;
+  }
+  
+  .shop-card ul li {
+    margin-bottom: 0.5em;
+  }
+  
+  .shop-card a.card-link {
+    display: block;
+    color: inherit;
+    text-decoration: none;
+    height: 100%;
+  }
+  
+  .shop-card .cta-button {
+    margin-top: 1em;
+    display: inline-block;
+    padding: 0.75em 1.5em;
+    background: var(--accent1);
+    color: white;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background 0.3s ease;
+    text-align: center;
+  }
+  
+  .shop-card .cta-button:hover {
+    background: var(--accent2);
+  }
+  

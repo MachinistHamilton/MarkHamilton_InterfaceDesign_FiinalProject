@@ -1,0 +1,120 @@
+/* ============================================== About Section ===================================================== */
+.about-banner {
+    position: relative;
+    z-index: 1;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.85), rgba(0, 0, 0, 0.4) 30%, rgba(0, 0, 0, 0) 60%),
+                url('../images/hero-banner.jpeg') no-repeat center center/cover;
+    text-align: center;
+    height:230px;
+  }
+  
+  .about-banner::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.2);
+    z-index: 0;
+    pointer-events: none;
+  }
+  
+  
+  .about-banner h1 {
+    font-size: 4em;
+    margin-bottom: 0.5em;
+    color: var(--accent1);
+  }
+  
+  .about-banner p {
+    font-size: 1.2em;
+    color: var(--text-muted);
+    max-width: 600px;
+    margin: 0 auto;
+  }
+  
+  .about-body {
+    padding: 4em 2em;
+  }
+  
+  .about-block {
+    display: flex;
+    align-items: center;
+    gap: 2em;
+    margin-bottom: 4em;
+    flex-wrap: wrap;
+  }
+  
+  .about-block.reverse {
+    flex-direction: row-reverse;
+  }
+  
+  .about-text {
+    flex: 1;
+    min-width: 300px;
+  }
+  
+  .about-text h2 {
+    font-size: 4em;
+    margin-bottom: 0.5em;
+    color: var(--accent2);
+  }
+  
+  .about-text p {
+    color: var(--text-light);
+    font-size: 1.5em;
+  }
+  
+  .about-image {
+    flex: 1;
+    padding: 2rem;  
+    min-width: 250px;
+  }
+  
+  .about-image img {
+    width: 95%;
+    border-radius: 10px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    opacity: 0;
+    animation: fadeInUp 0.8s ease-out forwards;
+  }
+  
+
+  @keyframes fadeInUp {
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  .about-gallery {
+    text-align: center;
+    padding-top: 2em;
+  }
+  
+  .about-gallery h2 {
+    font-size: 2em;
+    margin-bottom: 1em;
+  }
+  
+  .gallery-row {
+    display: flex;
+    gap: 1em;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  
+  .gallery-row img {
+    width: 350px;
+    border-radius: 8px;
+    transition: transform 0.3s ease;
+  }
+  
+  .gallery-row img:hover {
+    transform: scale(1.05);
+  }
+  
+  @media (max-width: 768px) {
+    .about-block {
+      flex-direction: column;
+    }
+  }
+
+  

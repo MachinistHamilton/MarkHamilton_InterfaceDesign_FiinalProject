@@ -1,0 +1,302 @@
+/* === Color Palette === */
+:root {
+  --primary: #121212;
+  --accent1: #c1292e;
+  --accent2: #1e5f74;
+  --text-light: #f8f8f8;
+  --text-muted: #b0b0b0;
+  --bg-dark: #0a0a0a;
+  --card-bg: #1b1b1b;
+  --hover-glow: #fff4;
+}
+
+/* === Reset === */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* === Typography === */
+body {
+  font-family: 'Rajdhani', sans-serif;
+  color: var(--text-light);
+  background-color: var(--bg-dark);
+  line-height: 1.6;
+}
+
+h1, h2, h3 {
+  font-family: 'Playfair Display', serif;
+  margin-bottom: 0.5em;
+  text-align: center;
+}
+
+a {
+  text-decoration: none;
+  color: var(--accent1);
+  transition: color 0.3s ease;
+}
+
+a:hover {
+  color: var(--accent2);
+}
+
+/* === Header === */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: var(--primary);
+  padding: 1em;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  font-size: 1.5em;
+  font-weight: bold;
+  color: var(--accent1);
+}
+
+.logo-image {
+  height: 50px;
+  width: auto;
+  
+}
+
+
+nav ul {
+  display: flex;
+  gap: 1.5em;
+  list-style: none;
+}
+
+nav a {
+  color: var(--text-light);
+}
+
+nav a.active {
+  border-bottom: 2px solid var(--accent1);
+}
+
+/* ====================================== Hero Section ======================== */
+.hero {
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.85), rgba(0, 0, 0, 0.4) 30%, rgba(0, 0, 0, 0) 60%),
+              url('../images/hero-banner.jpeg') no-repeat center center/cover;
+  min-height: 40vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 3em;
+  position: relative;
+}
+
+.hero::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.3);
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1;
+  max-width: 600px;
+}
+
+.hero-content h1 {
+  font-size: 3em;
+  margin-bottom: 0.5em;
+}
+
+.hero p {
+  font-size: 1.7em;
+  margin-bottom: 1em;
+  color: var(--text-muted);
+}
+
+.cta-button {
+  background: var(--accent1);
+  color: #fff;
+  padding: 0.75em 1.5em;
+  border-radius: 5px;
+  font-weight: bold;
+  transition: background 0.3s ease;
+  z-index: 100;
+}
+
+.cta-button:hover {
+  background: var(--accent2);
+}
+
+
+#shop-button {
+  background: var(--accent1);
+  color: #fff;
+  padding: 0.75em 1.5em;
+  border-radius: 5px;
+  font-weight: bold;
+  transition: background 0.3s ease;
+  position: absolute;
+  top: 95%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+#shop-button:hover {
+  background: var(--accent2);
+  color:#fff;
+}
+
+@media (max-width: 868px) {
+  .hero {
+    background-size: cover;
+    min-height: 30vh;
+    padding: 2em;
+    transition-duration: 2s;
+  }
+  #shop-button {
+    top: 85%;
+  }
+}
+
+nav ul {
+  gap: 0.5em;
+}
+
+
+/* ==================================================== 3D Carousel ============================================= */
+.fancy-carousel-section {
+
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.85), rgba(0, 0, 0, 0.4) 30%, rgba(0, 0, 0, 0) 60%),
+              url('../images/test.png') no-repeat center center/cover;
+  padding: 3em 1em;
+  overflow: hidden;
+  text-align: center;
+  height: 50vh;
+}
+
+.fancy-carousel {
+  position: relative;
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
+  perspective: 1200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  backdrop-filter: blur(30px);
+  position: relative;
+}
+
+.fancy-carousel::before {
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.85), rgba(0, 0, 0, 0));
+  pointer-events: none;
+}
+
+
+.fancy-carousel::after {
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.85), rgba(0, 0, 0, 0));
+  pointer-events: none;
+}
+
+.carousel-item {
+  position: absolute;
+  top: 0;
+  width: 250px;
+  height: 300px;
+  transition: transform 0.6s ease, opacity 0.6s ease;
+  opacity: 0;
+  cursor: pointer;
+  transform-style: preserve-3d;
+}
+
+.carousel-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 10px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.6);
+}
+
+.carousel-item.center {
+  transform: translateX(0) scale(1.2);
+  opacity: 1;
+  z-index: 5;
+}
+
+.carousel-item.left {
+  transform: translateX(-280px) rotateY(30deg) scale(1); /* Adjusted translateX for more spacing */
+  opacity: 0.8;
+  z-index: 4;
+}
+
+.carousel-item.left2 {
+  transform: translateX(-530px) rotateY(45deg) scale(0.9); /* Adjusted translateX for more spacing */
+  opacity: 0.4;
+  z-index: 2;
+}
+
+.carousel-item.right {
+  transform: translateX(280px) rotateY(-30deg) scale(1); /* Adjusted translateX for more spacing */
+  opacity: 0.8;
+  z-index: 4;
+}
+
+.carousel-item.right2 {
+  transform: translateX(530px) rotateY(-45deg) scale(0.9); /* Adjusted translateX for more spacing */
+  opacity: 0.4;
+  z-index: 2;
+}
+
+
+/* =================================================== MODAL =========================================== */
+/* Modal Styles */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 2000;
+  padding-top: 60px;
+  left: 0; top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0,0,0,0.85);
+}
+
+.modal-content {
+  margin: auto;
+  display: block;
+  max-width: 90%;
+  max-height: 80vh;
+  border-radius: 10px;
+}
+
+.modal-close {
+  position: absolute;
+  top: 20px; right: 30px;
+  color: white;
+  font-size: 2em;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+
+/* === Footer === */
+footer {
+  background: var(--bg-dark);
+  text-align: center;
+  padding: 2em;
+  font-size: 0.9em;
+  color: var(--text-muted);
+}
+
+footer::before {
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.85), rgba(0, 0, 0, 0));
+  pointer-events: none;
+}
+

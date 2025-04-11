@@ -1,0 +1,74 @@
+/* ================================================== Product Section ===================================== */
+.product-banner {
+    text-align: center;
+    padding: 5em 2em 3em;
+    color: var(--text-light);
+    position: relative;
+    z-index: 1;
+  }
+  
+  .product-banner::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.6);
+    z-index: -1;
+    pointer-events: none;
+  }
+  
+  .basic-bg, .elite-bg, .legendary-bg {
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.2) 30%, rgba(0, 0, 0, 0) 40%),
+                url('../images/hero-banner.jpeg') no-repeat center center/cover;
+    background-size: cover;
+    background-position: center;
+    padding: 5em 2em;
+    color: var(--text-light); 
+  }
+  
+  .product-details {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2em;
+    padding: 3em 2em;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .product-image img {
+    width: 300px;
+    border-radius: 10px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+  }
+  
+  .product-info {
+    max-width: 400px;
+  }
+  
+  .product-info h2 {
+    font-size: 2em;
+    margin-bottom: 1em;
+    color: var(--accent1);
+  }
+  
+  .product-info ul {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 1.5em;
+    color: var(--text-muted);
+  }
+  
+  .product-info ul li {
+    margin-bottom: 0.5em;
+  }
+  
+  .basic-bg::after {
+    background: linear-gradient(to bottom, rgba(205, 127, 50, 0.7), rgba(0, 0, 0, 0.8));
+  }
+  
+  .elite-bg::after {
+    background: linear-gradient(to bottom, rgba(192, 192, 192, 0.6), rgba(0, 0, 0, 0.8));
+  }
+  
+  .legendary-bg::after {
+    background: linear-gradient(to bottom, rgba(255, 215, 0, 0.6), rgba(0, 0, 0, 0.8));
+  }
